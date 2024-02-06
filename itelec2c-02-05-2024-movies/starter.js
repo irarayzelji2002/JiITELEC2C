@@ -208,6 +208,7 @@ console.log(extractDetailsForId5(5));
 //Add Cast
 const addCast = (id) => {
   var movie = data.find((d) => d.id === id);
+  const { cast } = movie;
   const newCast = [...cast, "Gab Montano"];
   return { ...movie, cast: newCast };
 };
