@@ -218,7 +218,8 @@ console.log(
 const addGPS = (id) => {
   var motor = getMotorcycle(id);
   const { features } = motor;
-  return [...features, "GPS Navigation"];
+  const updatedFeatures = [...features, "GPS Navigation"];
+  return { ...motor, features: updatedFeatures };
 };
 console.log(addGPS(1));
 
