@@ -1,15 +1,16 @@
 import { useState } from "react";
-function Form({ item, handleAddItem }) {
+function Form({ item, handleAddItem, setCounter, counter }) {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
   function handleSubmit(e) {
     e.preventDefault();
+    setCounter(counter + 1);
     const newItem = {
       name: name,
       quantity: quantity,
       isChecked: false,
       isDeleted: false,
-      id: Date.now(),
+      id: counter,
     };
     handleAddItem(newItem);
     console.log(newItem);

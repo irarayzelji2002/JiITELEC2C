@@ -302,8 +302,10 @@ form button {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin-top: -15px;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 .todo-list {
@@ -364,6 +366,16 @@ form button {
   height: 2em;
   border-radius: 80%;
   margin: 0 5px;
+}
+
+.clear-btn {
+  font-size: 19px;
+  cursor: pointer;
+  height: 2em;
+  border-radius: 20px;
+  margin: 0 5px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .todo-item {

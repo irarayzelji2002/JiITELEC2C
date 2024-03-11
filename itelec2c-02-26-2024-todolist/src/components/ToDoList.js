@@ -7,16 +7,15 @@ function ToDoList({ items, handleRemoveItem, handleCompletedItem }) {
         {/* <ToDoTask />
         <ToDoTask />
         <ToDoTask /> */}
-        {items.map(
-          (item) =>
-            item.isDeleted === false && (
-              <ToDoTask
-                item={item}
-                handleRemoveItem={handleRemoveItem}
-                handleCompletedItem={handleCompletedItem}
-              />
-            )
-        )}
+        {items.map((item) => (
+          //item.isDeleted === false && (
+          <ToDoTask
+            item={item}
+            handleRemoveItem={handleRemoveItem}
+            handleCompletedItem={handleCompletedItem}
+          />
+          //)
+        ))}
       </ul>
     </div>
   );
