@@ -23,7 +23,7 @@ function Form({ item, handleAddItem, setCounter, counter }) {
     <div id="form">
       <form onSubmit={handleSubmit}>
         <select
-          className="standard-dropdown"
+          className="grey dropdown"
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
         >

@@ -5,7 +5,7 @@ function Date() {
   const time = moment().format("HH:mm A");
 
   return (
-    <div>
+    <div className="dateDiv">
       <p>
         <span id="datetime">
           It's {date} at {time}.
