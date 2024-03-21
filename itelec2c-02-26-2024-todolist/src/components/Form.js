@@ -1,5 +1,5 @@
 import { useState } from "react";
-function Form({ item, handleAddItem, setCounter, counter }) {
+function Form({ item, handleAddItem, setCounter, counter, theme }) {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
   function handleSubmit(e) {
@@ -23,7 +23,7 @@ function Form({ item, handleAddItem, setCounter, counter }) {
     <div id="form">
       <form onSubmit={handleSubmit}>
         <select
-          className="grey dropdown"
+          className={`grey dropdown ${theme}-dropdownBG`}
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
         >
@@ -34,13 +34,16 @@ function Form({ item, handleAddItem, setCounter, counter }) {
           ))}
         </select>
         <input
-          className="todo-input standard-input"
+          className={`todo-input standard-input ${theme}-input`}
           type="text"
           placeholder="Add a task."
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <button className="todo-btn standard-button" type="submit">
+        <button
+          className={`todo-btn standard-button ${theme}-button`}
+          type="submit"
+        >
           I Got This!
         </button>
       </form>

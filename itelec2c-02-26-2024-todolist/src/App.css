@@ -80,7 +80,7 @@ p {
 #header,
 #form,
 #datetime {
-  margin: 0 1rem;
+  margin: 0 0;
   min-height: 10vh;
   width: 100%;
 }
@@ -142,7 +142,7 @@ p {
   letter-spacing: 0.2rem;
   margin-top: 50px;
   margin-bottom: 20px;
-  max-width: 480px;
+  max-width: 500px;
 }
 
 /* Animation */
@@ -154,6 +154,11 @@ p {
 #title.darker-title {
   animation: animated-text 2s steps(11, end) 0.5s 1 normal both,
     darker-animated-cursor 750ms steps(11, end) infinite;
+}
+
+.subtitle {
+  margin-top: -20px;
+  margin-bottom: 25px;
 }
 
 /* text animation */
@@ -193,7 +198,8 @@ form {
   justify-content: center;
   margin: 15px 0;
   padding: 0.8rem;
-  width: 100%;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 form input {
@@ -251,7 +257,22 @@ form input.darker-input:hover {
   background-color: #013141;
 }
 
-button {
+.standard-dropdownBG {
+  background-color: #181a1a !important;
+  color: rgb(247, 226, 223) !important;
+}
+.light-dropdownBG {
+  background-color: #aeb1b4 !important;
+  color: #1a150e !important;
+}
+.darker-dropdownBG {
+  background-color: #01394c !important;
+  color: white !important;
+  border-right: 1px solid rgb(130, 133, 146) !important;
+}
+
+button,
+select {
   border: none;
   outline: none;
   transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
@@ -274,11 +295,13 @@ button.standard-button:hover {
 
 button.light-button {
   background-color: white;
+  box-shadow: 0px 0px 20px -5px #999999;
   color: #1a150e;
 }
 
 button.light-button:hover {
   background-color: #f0f0f0;
+  box-shadow: 0px 0px 20px -5px #3f3f3f;
 }
 
 button.darker-button {
@@ -288,6 +311,20 @@ button.darker-button {
 
 button.darker-button:hover {
   background-color: #001f29;
+}
+
+.standard-BG {
+  background-color: rgb(247, 226, 223);
+}
+
+.light-BG {
+  background-color: white;
+  box-shadow: 0px 0px 20px -5px #999999;
+}
+
+.darker-BG {
+  background-color: #002837;
+  color: white;
 }
 
 form button {
@@ -393,7 +430,7 @@ form button {
 
 .grey {
   background-color: #181a1a;
-  color: rgb(247, 226, 223) !important;
+  color: rgb(247, 226, 223);
   font-size: 15px;
   height: 41px;
   border-top-left-radius: 17px;
@@ -406,10 +443,6 @@ form button {
 
 .grey:hover {
   background-color: rgb(0, 0, 0);
-}
-
-.peach {
-  background-color: rgb(247, 226, 223) !important;
 }
 
 .dropdown-text {
@@ -460,7 +493,7 @@ form button {
 }
 
 .green {
-  color: ;
+  color: #002b00;
 }
 
 .fall {
@@ -477,6 +510,12 @@ form button {
   }
 }
 
+@media only screen and (min-width: 800px) {
+  #title {
+    font-size: 85px;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   #header {
     font-size: 2rem;
@@ -487,7 +526,7 @@ form button {
       animated-cursor 750ms steps(16, end) infinite;
     margin-bottom: 10px;
     margin-top: 30px;
-    max-width: 330px;
+    max-width: 380px;
   }
 }
 
@@ -499,7 +538,7 @@ form button {
   #title {
     animation: animated-text 3.5s steps(16, end) 0.5s 1 normal both,
       animated-cursor 750ms steps(16, end) infinite;
-    max-width: 255px;
+    max-width: 280px;
   }
 }
 

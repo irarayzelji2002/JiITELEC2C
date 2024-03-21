@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import Date from "./components/Date";
@@ -35,6 +35,23 @@ function App() {
   const [items, setItems] = useState(initialItems);
   const [sortBy, setSortBy] = useState("input");
   const [counter, setCounter] = useState(4);
+  const [theme, setTheme] = useState("standard");
+
+  //load saved theme
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("savedTheme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+    document.body.className = theme;
+  }, [theme]);
+  //change theme
+  const changeTheme = (color) => {
+    localStorage.setItem("savedTheme", color);
+    setTheme(color);
+    console.log("Theme: ", color);
+  };
+
   const handleAddItem = (newItem) => {
     setItems((items) => [...items, newItem]);
   };
@@ -67,13 +84,14 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
+    <div className={`App`}>
+      <Header changeTheme={changeTheme} />
       <Form
         items={items}
         handleAddItem={handleAddItem}
         setCounter={setCounter}
         counter={counter}
+        theme={theme}
       />
       <Date />
       <Status items={items} />
@@ -81,12 +99,14 @@ function App() {
         sortBy={sortBy}
         setSortBy={setSortBy}
         handleClearList={handleClearList}
+        theme={theme}
       />
       <ToDoList
         items={items}
         handleRemoveItem={handleRemoveItem}
         handleCompletedItem={handleCompletedItem}
         sortBy={sortBy}
+        theme={theme}
       />
     </div>
   );

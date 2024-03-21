@@ -1,11 +1,11 @@
-function Sort({ sortBy, setSortBy }) {
+function Sort({ sortBy, setSortBy, theme }) {
   return (
     <div className="sortDiv">
       <strong className="dropdown-text">Sort By</strong>
       <select
         value={sortBy}
         onChange={(e) => setSortBy(e.target.value)}
-        className="dropdown peach standard-button"
+        className={`dropdown standard-button ${theme}-BG`}
       >
         <option value="input">Input</option>
         <option value="name">Name</option>
